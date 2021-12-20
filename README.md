@@ -3,6 +3,7 @@ This repository contains an example app that reproduces a bug in the Pendo-Segme
 
 ## Running the app
 `npm install`
+
 `REACT_APP_SEGMENT_KEY=abc123 npm start`
 
 ## Reproducing the bug
