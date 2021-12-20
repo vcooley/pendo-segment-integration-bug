@@ -2,8 +2,8 @@
 This repository contains an example app that reproduces a bug in the Pendo-Segment integration.
 
 ## Running the app
-npm install
-REACT_APP_SEGMENT_KEY=SEGMENT_WRITE_KEY_HERE npm start
+`npm install`
+`REACT_APP_SEGMENT_KEY=abc123 npm start`
 
 ## Reproducing the bug
 In the application window's console run the following (example output commented in commands):
