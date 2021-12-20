@@ -1,22 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { min as snippet } from "@segment/snippet";
+import { useEffect } from "react";
+
+function addScript(properties) {
+  const script = document.createElement("script");
+  Object.assign(script, properties);
+  document.body.appendChild(script);
+}
+
+function addSegmentSnippet() {
+  const contents = snippet({
+    host: "cdn.segment.com",
+    apiKey: process.env.REACT_APP_SEGMENT_KEY,
+  });
+
+  addScript({
+    type: "text/javascript",
+    innerText: contents,
+  });
+}
 
 function App() {
+  useEffect(() => {
+    addSegmentSnippet();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <header>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
